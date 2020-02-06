@@ -5,6 +5,7 @@ const useHackerNewsApi = ():any=> {
   const [data, setData] = useState({ hits: [] });
   const [url, setUrl] = useState(
     'https://hn.algolia.com/api/v1/search?query=redux',
+
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -34,6 +35,7 @@ export default function FetchDataApp() {
       <form
         onSubmit={e => {
           doFetch(`https://hn.algolia.com/api/v1/search?query=${query}`);
+
           e.preventDefault(); /* but now browser reloading when clicking the submit button,because that's the native behavior of the browser when submitting a form*/
         }}
       >
